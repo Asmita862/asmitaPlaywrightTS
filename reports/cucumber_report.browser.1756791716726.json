@@ -1,0 +1,238 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-functionality;successful-login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Successful login with valid credentials",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "the user is on the Login page",
+            "match": {
+              "location": "tests/steps/login.steps.ts:4"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 2327706,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'page')\n    at CustomWorld.<anonymous> (/home/ebpearls/Desktop/bahah 2 /tests/steps/login.steps.ts:6:24)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "the user enters email \"gorakh@ebpearls.com.au\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:9"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "the user enters password \"Password@1\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:13"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the user clicks on \"Sign in now\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:17"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "the user should be redirected to the Dashboard",
+            "match": {
+              "location": "tests/steps/login.steps.ts:25"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-functionality;failed-login-with-invalid-credentials",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Failed login with invalid credentials",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "the user is on the Login page",
+            "match": {
+              "location": "tests/steps/login.steps.ts:4"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 286463,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'page')\n    at CustomWorld.<anonymous> (/home/ebpearls/Desktop/bahah 2 /tests/steps/login.steps.ts:6:24)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "the user enters email \"invalid@example.com\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:9"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "the user enters password \"wrongPassword\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:13"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the user clicks on \"Sign in now\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:17"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "the user should see a validation error message",
+            "match": {
+              "location": "tests/steps/login.steps.ts:29"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-functionality;forgot-password-navigation",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Forgot password navigation",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "the user is on the Login page",
+            "match": {
+              "location": "tests/steps/login.steps.ts:4"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 208606,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'page')\n    at CustomWorld.<anonymous> (/home/ebpearls/Desktop/bahah 2 /tests/steps/login.steps.ts:6:24)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "the user clicks on \"Forgot password\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:17"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "the user should be redirected to the Forgot Password page",
+            "match": {
+              "location": "tests/steps/login.steps.ts:33"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-functionality",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Login functionality",
+    "tags": [
+      {
+        "name": "@login",
+        "line": 1
+      }
+    ],
+    "uri": "tests/features/login.feature"
+  }
+]

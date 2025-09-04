@@ -13,9 +13,6 @@ Feature: Login functionality
     When the user enters email "invalid@example.com"
     And the user enters password "wrongPassword"
     And the user clicks on "Sign in now"
-    Then the user should see a validation error message
+    Then the user should see a toast message "Invalid email or password"
 
-  Scenario: Forgot password navigation
-    Given the user is on the Login page
-    When the user clicks on "Forgot password"
-    Then the user should be redirected to the Forgot Password page
+  

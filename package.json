@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test:login": "npx cucumber-js --config tests/support/cucumber.js --tags @login",
-    "test:login:chromium": "set BROWSER=chromium && npm run test:login"
+    "test:login:chromium": "set BROWSER=chromium && npm run test:login",
+    "test:customer": "npx cucumber-js --config tests/support/cucumber.js --tags @customer"
   },
   "keywords": [],
   "author": "",

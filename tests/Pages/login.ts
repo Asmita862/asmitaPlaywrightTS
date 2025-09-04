@@ -1,8 +1,5 @@
-import { Page, Locator, expect } from "@playwright/test";
-/**
- * Login Page Object Model
- * Uses provided locators for the app
- */
+import { Page, Locator, expect } from '@playwright/test';
+
 export class LoginPage {
   readonly page: Page;
 
@@ -15,17 +12,14 @@ export class LoginPage {
 
   constructor(page: Page) {
     this.page = page;
-
-    // === Locators ===
-    this.emailInput = page.locator('//input[@id="outlined-adornment-email-login"]'); // Email input
-    this.passwordInput = page.locator('//input[@id="outlined-adornment-password-login"]'); // Password input
-    this.togglePasswordIcon = page.locator('//*[name()="path" and contains(@d,"M12 4.5C7 ")]'); // Toggle password icon
-    this.forgotPasswordLink = page.locator('//a[@class="MuiTypography-root MuiTypography-body1 css-y0akyl"]'); // Forgot password link
-    this.signInButton = page.locator('//button[@type="submit"]'); // Sign in now button
-    this.validationError = page.locator('.Toastify__toast-body'); // Validation/Toast messages
+    this.emailInput = page.locator('//input[@id="outlined-adornment-email-login"]'); 
+    this.passwordInput = page.locator('//input[@id="outlined-adornment-password-login"]'); 
+    this.togglePasswordIcon = page.locator('//*[name()="path" and contains(@d,"M12 4.5C7 ")]'); 
+    this.forgotPasswordLink = page.locator('//a[@class="MuiTypography-root MuiTypography-body1 css-y0akyl"]'); 
+    this.signInButton = page.locator('//button[@type="submit"]'); 
+    this.validationError = page.locator('.Toastify__toast-body'); 
   }
 
-  // === Actions ===
   async enterEmail(email: string) {
     await this.emailInput.fill(email);
   }
@@ -46,12 +40,18 @@ export class LoginPage {
     await this.signInButton.click();
   }
 
-  // === Assertions ===
   async expectDashboard() {
     await expect(this.page).toHaveURL('https://stage-cms.bahah.com.au/dashboard');
   }
 
   async expectValidationError() {
     await expect(this.validationError).toBeVisible();
+  }
+
+  // ===== Added loginAs method =====
+  async loginAs(email: string, password: string) {
+    await this.enterEmail(email);
+    await this.enterPassword(password);
+    await this.clickSignIn();
   }
 }

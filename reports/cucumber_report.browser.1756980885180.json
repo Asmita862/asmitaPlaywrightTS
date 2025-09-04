@@ -1,0 +1,207 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "customer-management;add-a-new-customer",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Add a new customer",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 541180139
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am already logged in and on the dashboard page",
+            "match": {
+              "location": "tests/steps/customer.step.ts:4"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 30002485814,
+              "error_message": "Error: function timed out, ensure the promise resolves within 30000 milliseconds\n    at Timeout.<anonymous> (/home/ebpearls/Desktop/bahah 2 /node_modules/@cucumber/cucumber/src/time.ts:52:14)\n    at listOnTimeout (node:internal/timers:581:17)\n    at processTimers (node:internal/timers:519:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I click on the \"Customer\" section",
+            "match": {
+              "location": "tests/steps/customer.step.ts:11"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on the \"Add New\" button",
+            "match": {
+              "location": "tests/steps/customer.step.ts:15"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I enter the customer's first name",
+            "match": {
+              "location": "tests/steps/customer.step.ts:19"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I enter the customer's last name",
+            "match": {
+              "location": "tests/steps/customer.step.ts:24"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I enter the customer's email address",
+            "match": {
+              "location": "tests/steps/customer.step.ts:29"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I enter the customer's contact number",
+            "match": {
+              "location": "tests/steps/customer.step.ts:34"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I upload profile picture",
+            "match": {
+              "location": "tests/steps/customer.step.ts:39"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click \"create new user\" button",
+            "match": {
+              "location": "tests/steps/customer.step.ts:44"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I should see a success message that the user was created",
+            "match": {
+              "location": "tests/steps/customer.step.ts:48"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I should see the new user added to the customer list",
+            "match": {
+              "location": "tests/steps/customer.step.ts:52"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "I logout from the application",
+            "match": {
+              "location": "tests/steps/customer.step.ts:56"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 107661225
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@customer",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "customer-management",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Customer management",
+    "tags": [
+      {
+        "name": "@customer",
+        "line": 1
+      }
+    ],
+    "uri": "tests/features/customer.feature"
+  }
+]

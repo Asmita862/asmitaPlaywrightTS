@@ -1,0 +1,285 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-functionality;successful-login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Successful login with valid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 494851356
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "the user is on the Login page",
+            "match": {
+              "location": "tests/steps/login.steps.ts:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2810573750
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "the user enters email \"gorakh@ebpearls.com.au\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1041741057
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "the user enters password \"Password@1\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 95710621
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the user clicks on \"Sign in now\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 143386757
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "the user should be redirected to the Dashboard",
+            "match": {
+              "location": "tests/steps/login.steps.ts:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1888350177
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 160484504
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-functionality;failed-login-with-invalid-credentials",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Failed login with invalid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 461769972
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "the user is on the Login page",
+            "match": {
+              "location": "tests/steps/login.steps.ts:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2534562882
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "the user enters email \"invalid@example.com\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 902531565
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "the user enters password \"wrongPassword\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 68848467
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the user clicks on \"Sign in now\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 88641145
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "the user should see a validation error message",
+            "match": {
+              "location": "tests/steps/login.steps.ts:31"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5006832887,
+              "error_message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('.Toastify__toast-body')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"to.be.visible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.Toastify__toast-body')\u001b[22m\n\n    at Proxy.<anonymous> (/home/ebpearls/Desktop/bahah 2 /node_modules/playwright/lib/matchers/expect.js:221:24)\n    at LoginPage.expectValidationError (/home/ebpearls/Desktop/bahah 2 /tests/Pages/login.ts:48:40)\n    at CustomWorld.<anonymous> (/home/ebpearls/Desktop/bahah 2 /tests/steps/login.steps.ts:32:24)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 157059531
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-functionality;forgot-password-navigation",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Forgot password navigation",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 453997987
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "the user is on the Login page",
+            "match": {
+              "location": "tests/steps/login.steps.ts:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2750055765
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "the user clicks on \"Forgot password\"",
+            "match": {
+              "location": "tests/steps/login.steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 920196029
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "the user should be redirected to the Forgot Password page",
+            "match": {
+              "location": "tests/steps/login.steps.ts:35"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 25931821237,
+              "error_message": "page.waitForURL: Target page, context or browser has been closed\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================\n    at CustomWorld.<anonymous> (/home/ebpearls/Desktop/bahah 2 /tests/steps/login.steps.ts:36:19)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 127792428
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-functionality",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Login functionality",
+    "tags": [
+      {
+        "name": "@login",
+        "line": 1
+      }
+    ],
+    "uri": "tests/features/login.feature"
+  }
+]
