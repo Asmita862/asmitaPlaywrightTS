@@ -7,7 +7,7 @@ import { Page, expect } from '@playwright/test';
  * @param password User password
  */
 export async function login(page: Page, email: string, password: string) {
-  await page.goto('https://stage-cms.bahah.com.au/login', { timeout: 100000 });
+  await page.goto('https://stage-cms.bahah.com.au/login', { timeout: 400000 });
 
   // Fill email and password
   await page.fill('#outlined-adornment-email-login', email);

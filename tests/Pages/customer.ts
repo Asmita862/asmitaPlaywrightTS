@@ -1,10 +1,14 @@
-import { Page, expect } from '@playwright/test';
+import { Page, Locator, expect } from '@playwright/test';
 
 export class CustomerPage {
-  page: Page;
+  readonly page: Page;
+  readonly createUserButton: Locator;
+  readonly successToast: Locator;
 
   constructor(page: Page) {
     this.page = page;
+    this.createUserButton = page.locator('//button[@type="submit"]');
+    this.successToast = page.locator("div.MuiAlert-message");
   }
 
   async clickCustomerSection() {
@@ -23,7 +27,7 @@ export class CustomerPage {
     await this.page.fill('input[placeholder="Enter last name"]', name);
   }
 
-  generateRandomEmail() {
+  generateRandomEmail(): string {
     return `asmita_${Date.now()}@gmail.com`;
   }
 
@@ -31,7 +35,7 @@ export class CustomerPage {
     await this.page.fill('input[placeholder="Your Email address"]', email);
   }
 
-  generateRandomPhone() {
+  generateRandomPhone(): string {
     return '9' + Math.floor(Math.random() * 9000000000 + 1000000000);
   }
 
@@ -44,17 +48,21 @@ export class CustomerPage {
   }
 
   async clickCreateNewUser() {
-    const button = this.page.locator('//button[@type="submit"]');
-    await button.waitFor({ state: 'visible', timeout: 40000 });
-    await button.click();
+    await this.createUserButton.waitFor({ state: 'visible', timeout: 40000 });
+    if (!(await this.createUserButton.isEnabled())) {
+      throw new Error('Submit button is not enabled');
+    }
+    await this.createUserButton.click();
   }
 
   async expectSuccessToast(message: string) {
-    const toast = this.page.locator("div.MuiAlert-message", { hasText: message });
+    const toast = this.successToast.filter({ hasText: message });
     await expect(toast.first()).toBeVisible({ timeout: 30000 });
   }
 
   async verifyUserInList(email: string) {
+    await this.page.goto('https://stage-cms.bahah.com.au/app-user/list');
+    await this.page.waitForSelector('table', { timeout: 10000 });
     const row = this.page.locator(`text=${email}`);
     await expect(row).toBeVisible({ timeout: 10000 });
   }

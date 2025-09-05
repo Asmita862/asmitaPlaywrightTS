@@ -1,6 +1,9 @@
 import { Given, When, Then, setDefaultTimeout } from '@cucumber/cucumber';
 import { CustomWorld } from '../support/world';
 import { login, logout } from '../support/auth';
+import {CustomerPage } from '../Pages/customer';
+import { expect } from '@playwright/test';
+
 
 // Increase default timeout for slow staging pages
 setDefaultTimeout(60000);
@@ -43,21 +46,44 @@ When('I upload profile picture', async function (this: CustomWorld) {
   const filePath = '/home/ebpearls/Desktop/EB Pearls/download.jpeg';
   await this.customerPage.uploadProfilePicture(filePath);
 });
-
+// ------------------- Actions -------------------
 When('I click "create new user" button', async function (this: CustomWorld) {
-  await this.customerPage.clickCreateNewUser();
+  const customerPage = new CustomerPage(this.page);
+
+  const button = customerPage.createUserButton;
+  await button.waitFor({ state: 'visible', timeout: 30000 });
+
+  if (!(await button.isEnabled())) {
+    throw new Error('Submit button is not enabled');
+  }
+
+  await button.scrollIntoViewIfNeeded();
+  await this.page.waitForTimeout(6000);
+  await button.click();
+
+  console.log('Current URL after submit:', await this.page.url());
+  await this.page.screenshot({ path: 'submit-result.png', fullPage: true });
 });
 
+// ------------------- Verifications -------------------
 Then('I should see a success message that the user was created', async function (this: CustomWorld) {
-  await this.customerPage.expectSuccessToast('User created successfully');
+  const customerPage = new CustomerPage(this.page);
+
+  const toast = customerPage.successToast;
+  await toast.waitFor({ state: 'visible', timeout: 20000 });
+  await expect(toast).toContainText('User created successfully');
 });
 
 Then('I should see the new user added to the customer list', async function (this: CustomWorld) {
-  await this.customerPage.verifyUserInList(this.email);
+  const customerPage = new CustomerPage(this.page);
+
+  await this.page.goto('https://stage-cms.bahah.com.au/app-user/list');
+  await this.page.waitForSelector('table', { timeout: 10000 });
+
+  const newUserRow = this.page.locator(`text=${this.email}`);
+  await expect(newUserRow).toBeVisible({ timeout: 10000 });
 });
 
 Then('I logout from the application', async function (this: CustomWorld) {
-  // Use reusable auth.ts logout function
   await logout(this.page);
-  await this.close(); // close browser after test
 });
