@@ -2,11 +2,14 @@
   "name": "bahah-2-",
   "version": "1.0.0",
   "main": "index.js",
+
   "scripts": {
-    "test:login": "npx cucumber-js --config tests/support/cucumber.js --tags @login",
-    "test:login:chromium": "set BROWSER=chromium && npm run test:login",
-    "test:customer": "npx cucumber-js --config tests/support/cucumber.js --tags @customer"
-  },
+  "test:login": "npx cucumber-js --config tests/support/cucumber.js --tags @login",  
+  "test:login:chromium":"set BROWSER=chromium && npx dotenv -e .env -- npm run test:login", 
+  "test:customer": "npx cucumber-js --config tests/support/cucumber.js --tags @customer",
+  "test:edit": "npx cucumber-js --config tests/support/cucumber.js --tags @edit"
+},
+
   "keywords": [],
   "author": "",
   "license": "ISC",

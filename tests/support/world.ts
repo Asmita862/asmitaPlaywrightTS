@@ -2,6 +2,7 @@ import { setWorldConstructor, World } from '@cucumber/cucumber';
 import { Browser, BrowserContext, Page, chromium } from 'playwright';
 import { LoginPage } from '../Pages/login';
 import { CustomerPage } from '../Pages/customer';
+import { CustomerEditPage } from '../Pages/customeredit';
 
 export class CustomWorld extends World {
   browser!: Browser;
@@ -9,6 +10,8 @@ export class CustomWorld extends World {
   page!: Page;
   loginPage!: LoginPage;
   customerPage!: CustomerPage;
+  customerEditPage!: CustomerEditPage; 
+
 
   firstName!: string;
   lastName!: string;
