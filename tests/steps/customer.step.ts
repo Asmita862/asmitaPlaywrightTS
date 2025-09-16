@@ -8,13 +8,13 @@ import { expect } from '@playwright/test';
 // Increase default timeout for slow staging pages
 setDefaultTimeout(60000);
 
-Given('I am already logged in and on  dashboard page', async function (this: CustomWorld) {
+Given('I am already logged in and on dashboard page', async function (this: CustomWorld) {
   await this.init();
   // Use reusable auth.ts login function
   await login(this.page, 'gorakh@ebpearls.com.au', 'Password@1');
 });
 
-When('I click on  "Customer" section', async function (this: CustomWorld) {
+When('I click on "Customer" section', async function (this: CustomWorld) {
   await this.customerPage.clickCustomerSection();
 });
 

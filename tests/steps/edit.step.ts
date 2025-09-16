@@ -2,7 +2,6 @@ import { Given, When, Then, setDefaultTimeout } from '@cucumber/cucumber';
 import { CustomWorld } from '../support/world';
 import { login, logout } from '../support/auth';
 import { CustomerEditPage } from '../Pages/customeredit';
-import { expect } from '@playwright/test';
 
 setDefaultTimeout(60000);
 
@@ -61,7 +60,8 @@ When('I select date of birth {string}', async function (this: CustomWorld, date:
 });
 
 When('I type and select street {string}', async function (this: CustomWorld, street: string) {
-  await this.customerEditPage.typeAndSelectStreet(street);
+  await this.customerEditPage.typeAndSelectStreet('Sydney Opera House, Sydney NSW, Australia');
+
 });
 
 When('I click Save Changes', async function (this: CustomWorld) {
@@ -72,9 +72,10 @@ When('I confirm the update by clicking {string}', async function (this: CustomWo
   await this.customerEditPage.confirmUpdate(buttonText);
 });
 
-Then('I should see a success toast message {string}', async function (this: CustomWorld, expectedMessage: string) {
-  await this.customerEditPage.verifySuccessToast(expectedMessage);
+Then('I should see a success toast message {string}', async function (this: CustomWorld, message: string) {
+  await this.customerEditPage.verifySuccessToast(message);
 });
+
 
 Then('I logout from the application', async function (this: CustomWorld) {
   await logout(this.page);

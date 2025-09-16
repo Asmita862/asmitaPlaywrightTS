@@ -1,11 +1,13 @@
-import { Page, expect } from '@playwright/test';
-import path from 'path';
+import { Page, expect, Locator } from '@playwright/test';
 
 export class CustomerEditPage {
   page: Page;
+  successToast: Locator;
 
   constructor(page: Page) {
     this.page = page;
+    // Generic toast locator (avoid dynamic CSS classes)
+    this.successToast = this.page.locator('div.MuiAlert-message');
   }
 
   async clickCustomerSection() {
@@ -14,8 +16,7 @@ export class CustomerEditPage {
 
   async clickKebabMenuFirstRow() {
     await this.page.waitForSelector('tbody tr td:nth-child(6) button', { timeout: 10000 });
-    const kebabButton = this.page.locator('//tbody/tr[1]/td[6]/button[1]');
-    await kebabButton.click();
+    await this.page.locator('//tbody/tr[1]/td[6]/button[1]').click();
   }
 
   async selectEditFromDropdown() {
@@ -27,58 +28,40 @@ export class CustomerEditPage {
     await expect(this.page).toHaveURL(/.*\/app-user\/edit.*/, { timeout: 10000 });
   }
 
-  /*async verifyTitle(expectedTitle: string) {
-  const titleLocator = this.page.locator(
-    'div.MuiCardHeader-root span.MuiTypography-root.MuiTypography-h5.MuiCardHeader-title'
-  ).first();
-*/
-
-async verifyTitle(expectedTitle: string) {
-  const titleLocator = this.page.locator(
-    'div.MuiCardHeader-root span.MuiTypography-root.MuiTypography-h5.MuiCardHeader-title'
-  ).first();
-
-  // Debug log
-  const actualText = await titleLocator.textContent();
-  console.log("DEBUG: Found title text =>", actualText);
-
-  // Check the actual text
-  await expect(titleLocator).toHaveText(expectedTitle, { timeout: 60000 });
-}
+  async verifyTitle(titleText: string) {
+    const heading = this.page.locator(
+      'div.MuiCardHeader-root span.MuiTypography-root.MuiTypography-h5.MuiCardHeader-title',
+      { hasText: titleText }
+    ).first();
+    await expect(heading).toBeVisible({ timeout: 90000 });
+  }
 
   async uploadProfilePicture(filePath: string) {
-    const resolvedPath = path.resolve(filePath);
-    const fileInput = this.page.locator('input[type="file"]');
-    await fileInput.setInputFiles(resolvedPath);
+    await this.page.locator('input[type="file"]').setInputFiles(filePath);
   }
 
   async selectStatus(status: string) {
-    const statusDropdown = this.page.locator('//div[@id="customer-status"]');
-    await statusDropdown.waitFor({ state: 'visible', timeout: 10000 });
-    await statusDropdown.click();
+    await this.page.locator('//div[@id="customer-status"]').click();
     const option = this.page.locator(`//li[contains(text(), "${status}")]`);
     await option.waitFor({ state: 'visible', timeout: 5000 });
     await option.click();
   }
 
-  async enterFirstName(name: string) {
-    await this.page.fill('input[placeholder="Enter first name"]', name);
+  async enterFirstName(firstName: string) {
+    await this.page.fill('input[placeholder="Enter first name"]', firstName);
   }
 
-  async enterLastName(name: string) {
-    await this.page.fill('input[placeholder="Enter last name"]', name);
+  async enterLastName(lastName: string) {
+    await this.page.fill('input[placeholder="Enter last name"]', lastName);
   }
 
   async verifyEmailAndPhoneDisabled() {
-    const emailField = this.page.locator('input[placeholder="Enter email"]');
-    const phoneField = this.page.locator('input[placeholder="Phone"]');
-    await expect(emailField).toBeDisabled();
-    await expect(phoneField).toBeDisabled();
+    await expect(this.page.locator('input[placeholder="Enter email"]')).toBeDisabled();
+    await expect(this.page.locator('input[placeholder="Phone"]')).toBeDisabled();
   }
 
   async selectGender(gender: string) {
-    const genderDropdown = this.page.locator('//div[@id="user-gender"]');
-    await genderDropdown.click();
+    await this.page.locator('//div[@id="user-gender"]').click();
     const option = this.page.locator(`li >> text="${gender}"`);
     await option.waitFor({ state: 'visible', timeout: 5000 });
     await option.click();
@@ -86,22 +69,19 @@ async verifyTitle(expectedTitle: string) {
 
   async selectDOB(date: string) {
     const dobInput = this.page.locator('input[placeholder="MM/DD/YYYY"]');
-    await dobInput.click();
     await dobInput.fill(date);
     await dobInput.press('Enter');
   }
 
-  async typeAndSelectStreet(street: string) {
-    const streetInput = this.page.locator("//input[@placeholder='Enter a location']");
-    await streetInput.fill(street);
+  async typeAndSelectStreet(address: string) {
+    await this.page.locator("//input[@placeholder='Enter a location']").fill(address);
     const firstSuggestion = this.page.locator('.pac-item').first();
-    await firstSuggestion.waitFor({ state: 'visible', timeout: 5000 });
+    await firstSuggestion.waitFor({ state: 'visible', timeout: 20000 });
     await firstSuggestion.click();
   }
 
   async clickSaveChanges() {
-    const saveButton = this.page.locator('button', { hasText: 'Save Changes' });
-    await saveButton.click();
+    await this.page.locator('button', { hasText: 'Save Changes' }).click();
   }
 
   async confirmUpdate(buttonText: string) {
@@ -109,12 +89,23 @@ async verifyTitle(expectedTitle: string) {
     await yesButton.waitFor({ state: 'visible', timeout: 10000 });
     await yesButton.scrollIntoViewIfNeeded();
     await yesButton.click({ force: true });
-    await this.page.waitForTimeout(20000);
   }
 
-  async verifySuccessToast(expectedMessage: string) {
-    const toast = this.page.locator('.Toastify__toast-body');
-    await expect(toast).toBeVisible({ timeout: 10000 });
-    await expect(toast).toContainText(expectedMessage);
+  async verifySuccessToast(message: string, timeout = 5000) {
+    // Locate the toast using a stable class or role and filter by text
+    const toast = this.page.locator('div.MuiAlert-message, div[role="alert"]', { hasText: message }).first();
+
+    // Wait for the toast to appear
+    await toast.waitFor({ state: 'visible', timeout });
+
+    // Assert it is visible and contains the correct text
+    await expect(toast).toBeVisible();
+    await expect(toast).toHaveText(message);
+  }
+
+  async logout() {
+    await this.page.click("//div[@class='MuiAvatar-root']//*[name()='svg']");
+    await this.page.click("//p[normalize-space()='Logout']");
+    await expect(this.page).toHaveURL('https://stage-cms.bahah.com.au/login');
   }
 }

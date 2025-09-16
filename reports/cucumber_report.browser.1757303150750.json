@@ -1,0 +1,285 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "edit-existing-customer;edit-customer-details",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Edit customer details",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 495829195
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am already logged in and on the dashboard page",
+            "match": {
+              "location": "tests/steps/edit.step.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7555023223
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I click on the \"Customer\" section",
+            "match": {
+              "location": "tests/steps/edit.step.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 390471072
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on the kebab menu for a customer",
+            "match": {
+              "location": "tests/steps/edit.step.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1096434949
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I select \"Edit\" from the dropdown",
+            "match": {
+              "location": "tests/steps/edit.step.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 349174278
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be redirected to the Edit User page",
+            "match": {
+              "location": "tests/steps/edit.step.ts:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5205613
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I should see the title \"User Profile\"",
+            "match": {
+              "location": "tests/steps/edit.step.ts:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 921594236
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "I upload a profile picture",
+            "match": {
+              "location": "tests/steps/edit.step.ts:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 501684132
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I select status \"Active\"",
+            "match": {
+              "location": "tests/steps/edit.step.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 618307839
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I enter first name as \"Asmita\"",
+            "match": {
+              "location": "tests/steps/edit.step.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 226038191
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I enter last name as \"Aryal\"",
+            "match": {
+              "location": "tests/steps/edit.step.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 239283996
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Email and phone fields should not be clickable",
+            "match": {
+              "location": "tests/steps/edit.step.ts:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21898123
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I select gender \"Female\"",
+            "match": {
+              "location": "tests/steps/edit.step.ts:55"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 623445926
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I select date of birth \"01/01/1990\"",
+            "match": {
+              "location": "tests/steps/edit.step.ts:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 776783539
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I type and select street \"New York Street\"",
+            "match": {
+              "location": "tests/steps/edit.step.ts:63"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 21231377021,
+              "error_message": "locator.waitFor: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('.pac-item').first() to be visible\u001b[22m\n\n    at CustomerEditPage.typeAndSelectStreet (/home/ebpearls/Desktop/bahah 2 /tests/Pages/customeredit.ts:112:25)\n    at async CustomWorld.<anonymous> (/home/ebpearls/Desktop/bahah 2 /tests/steps/edit.step.ts:64:3)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "I click Save Changes",
+            "match": {
+              "location": "tests/steps/edit.step.ts:67"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I confirm the update by clicking \"Yes\"",
+            "match": {
+              "location": "tests/steps/edit.step.ts:71"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I should see a success toast message \"Customer updated successfully\"",
+            "match": {
+              "location": "tests/steps/edit.step.ts:75"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "I logout from the application",
+            "match": {
+              "location": "tests/steps/edit.step.ts:79"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 135034367
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@edit",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "edit-existing-customer",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Edit existing customer",
+    "tags": [
+      {
+        "name": "@edit",
+        "line": 1
+      }
+    ],
+    "uri": "tests/features/customeredit.feature"
+  }
+]

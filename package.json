@@ -2,12 +2,11 @@
   "name": "bahah-2-",
   "version": "1.0.0",
   "main": "index.js",
-
   "scripts": {
-  "test:login": "npx cucumber-js --config tests/support/cucumber.js --tags @login",  
-  "test:login:chromium":"set BROWSER=chromium && npx dotenv -e .env -- npm run test:login", 
-  "test:customer": "npx cucumber-js --config tests/support/cucumber.js --tags @customer",
-  "test:edit": "npx cucumber-js --config tests/support/cucumber.js --tags @edit"
+  "test:login": "npx cucumber-js --config tests/support/cucumber.js --tags @login ; ts-node \"tests/generate-report.ts\"",
+  "test:login:chromium": "set BROWSER=chromium && npx dotenv -e .env -- npm run test:login",
+  "test:customer": "npx cucumber-js --config tests/support/cucumber.js --tags @customer ; ts-node \"tests/generate-report.ts\"",
+  "test:edit": "npx cucumber-js --config tests/support/cucumber.js --tags @edit ; ts-node \"tests/generate-report.ts\""
 },
 
   "keywords": [],
@@ -18,6 +17,8 @@
     "@cucumber/cucumber": "^12.2.0",
     "@playwright/test": "^1.55.0",
     "@types/node": "^24.3.0",
+    "cucumber-html-reporter": "^7.2.0",
+    "multiple-cucumber-html-reporter": "^3.9.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   }
