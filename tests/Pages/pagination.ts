@@ -11,15 +11,10 @@ export class PaginationPage {
   constructor(page: Page) {
     this.page = page;
 
-    // Use the stable class from your HTML
     this.dropdownButton = page.locator('//button[contains(@class,"pagination-button")]');
-
-    // Row options inside dropdown
     this.option5 = page.locator('//li[@role="menuitem" and @value="5"]');
     this.option10 = page.locator('//li[@role="menuitem" and @value="10"]');
     this.option15 = page.locator('//li[@role="menuitem" and @value="15"]');
-
-    // Table rows
     this.rows = page.locator('table tbody tr');
   }
 
@@ -29,10 +24,8 @@ export class PaginationPage {
 
   async openDropdown() {
     await this.waitForTable();
-    console.log("Waiting for pagination dropdown button...");
     await this.dropdownButton.waitFor({ state: 'visible', timeout: 10000 });
     await this.dropdownButton.click();
-    console.log(" Clicked pagination dropdown button");
   }
 
   async selectRowsPerPage(rows: number) {
@@ -51,7 +44,9 @@ export class PaginationPage {
       default:
         throw new Error(`Unsupported row value: ${rows}`);
     }
-    console.log(` Selected ${rows} rows per page`);
+
+    //  Add delay so you can watch the change happen
+    await this.page.waitForTimeout(3000); // wait 3 seconds
   }
 
   async getRowCount(): Promise<number> {
