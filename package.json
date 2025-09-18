@@ -6,7 +6,8 @@
   "test:login": "npx cucumber-js --config tests/support/cucumber.js --tags @login ; ts-node \"tests/generate-report.ts\"",
   "test:login:chromium": "set BROWSER=chromium && npx dotenv -e .env -- npm run test:login",
   "test:customer": "npx cucumber-js --config tests/support/cucumber.js --tags @customer ; ts-node \"tests/generate-report.ts\"",
-  "test:edit": "npx cucumber-js --config tests/support/cucumber.js --tags @edit ; ts-node \"tests/generate-report.ts\""
+  "test:edit": "npx cucumber-js --config tests/support/cucumber.js --tags @edit ; ts-node \"tests/generate-report.ts\"",
+  "test:filter": "npx cucumber-js --config tests/support/cucumber.js --tags @filter ; ts-node \"tests/generate-report.ts\""
 },
 
   "keywords": [],

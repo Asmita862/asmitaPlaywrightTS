@@ -3,6 +3,7 @@ import { Browser, BrowserContext, Page, chromium } from 'playwright';
 import { LoginPage } from '../Pages/login';
 import { CustomerPage } from '../Pages/customer';
 import { CustomerEditPage } from '../Pages/customeredit';
+import { CustomerFilterPage } from '../Pages/customerfilter';
 
 export class CustomWorld extends World {
   browser!: Browser;
@@ -11,6 +12,7 @@ export class CustomWorld extends World {
   loginPage!: LoginPage;
   customerPage!: CustomerPage;
   customerEditPage!: CustomerEditPage; 
+  customerFilterPage!: CustomerFilterPage;
 
 
   firstName!: string;
@@ -29,6 +31,8 @@ export class CustomWorld extends World {
 
     this.loginPage = new LoginPage(this.page);
     this.customerPage = new CustomerPage(this.page);
+    this.customerEditPage = new CustomerEditPage(this.page);
+    this.customerFilterPage = new CustomerFilterPage(this.page);
   }
 
   async close() {
