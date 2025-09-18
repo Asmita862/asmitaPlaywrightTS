@@ -4,6 +4,7 @@ import { LoginPage } from '../Pages/login';
 import { CustomerPage } from '../Pages/customer';
 import { CustomerEditPage } from '../Pages/customeredit';
 import { CustomerFilterPage } from '../Pages/customerfilter';
+import { PaginationPage } from '../Pages/pagination';
 
 export class CustomWorld extends World {
   browser!: Browser;
@@ -13,6 +14,7 @@ export class CustomWorld extends World {
   customerPage!: CustomerPage;
   customerEditPage!: CustomerEditPage; 
   customerFilterPage!: CustomerFilterPage;
+  paginationPage!: PaginationPage;
 
 
   firstName!: string;
