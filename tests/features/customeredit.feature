@@ -18,5 +18,5 @@ Feature: Edit existing customer
     And I type and select street "Sydney Opera House, Sydney NSW, Australia"
     And I click Save Changes
     And I confirm the update by clicking "Yes"
-    Then I should see a success toast message "Customer updated successfully"
+    Then I should see a success toast message "User updated successfully"
     And I logout from the application

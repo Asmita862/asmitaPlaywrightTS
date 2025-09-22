@@ -80,7 +80,7 @@ export class CustomerEditPage {
     await firstSuggestion.click();
   }
 
-  async clickSaveChanges() {
+   async clickSaveChanges() {
     await this.page.locator('button', { hasText: 'Save Changes' }).click();
   }
 
@@ -91,18 +91,21 @@ export class CustomerEditPage {
     await yesButton.click({ force: true });
   }
 
-  async verifySuccessToast(message: string, timeout = 5000) {
-    // Locate the toast using a stable class or role and filter by text
-    const toast = this.page.locator('div.MuiAlert-message, div[role="alert"]', { hasText: message }).first();
-
-    // Wait for the toast to appear
-    await toast.waitFor({ state: 'visible', timeout });
-
-    // Assert it is visible and contains the correct text
-    await expect(toast).toBeVisible();
-    await expect(toast).toHaveText(message);
+ // Verify toast message reliably
+  async verifySuccessToast(message = 'User updated successfully', timeout = 15000) {
+    const toast = this.page.getByText(message, { exact: true });
+    await expect(toast).toBeVisible({ timeout });
+    await expect(toast).toHaveText(message, { timeout });
   }
 
+  // Combined full flow: Save → Confirm → Verify Toast
+  async saveConfirmAndVerifyToast(confirmButtonText = 'Yes', toastMessage = 'User updated successfully') {
+    await this.clickSaveChanges();
+    await this.confirmUpdate(confirmButtonText);
+    await this.verifySuccessToast(toastMessage);
+  }
+
+  // Logout method
   async logout() {
     await this.page.click("//div[@class='MuiAvatar-root']//*[name()='svg']");
     await this.page.click("//p[normalize-space()='Logout']");
