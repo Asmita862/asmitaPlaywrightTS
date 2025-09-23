@@ -8,7 +8,8 @@
   "test:customer": "npx cucumber-js --config tests/support/cucumber.js --tags @customer ; ts-node \"tests/generate-report.ts\"",
   "test:edit": "npx cucumber-js --config tests/support/cucumber.js --tags @edit ; ts-node \"tests/generate-report.ts\"",
   "test:filter": "npx cucumber-js --config tests/support/cucumber.js --tags @filter ; ts-node \"tests/generate-report.ts\"",
-  "test:pagination": "npx cucumber-js --config tests/support/cucumber.js --tags @pagination ; ts-node \"tests/generate-report.ts\""
+  "test:pagination": "npx cucumber-js --config tests/support/cucumber.js --tags @pagination ; ts-node \"tests/generate-report.ts\"",
+  "test:api": "npx playwright test tests/api/userApi.spec.ts"
 },
 
   "keywords": [],
