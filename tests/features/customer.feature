@@ -14,5 +14,7 @@ Feature: Customer management
    And I click "create new user" button
    Then I should see a success message  user was created
    And I search for newly added user by email address
+   And I search for newly added user by first name 
+   And I search for newly added user by last name
    And I should see  new user added to  customer list
    Then I logout from application

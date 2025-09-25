@@ -67,29 +67,52 @@ export class CustomerPage {
     await expect(row).toBeVisible({ timeout: 10000 });
   }
 
-   // ------------------- NEW SEARCH METHOD -------------------
-async searchCustomerByEmail(email: string) {
-  // Go to customer list page
-  await this.page.goto('https://stage-cms.bahah.com.au/app-user/list');
+  // ------------------- NEW SEARCH METHODS -------------------
+  async searchCustomerByEmail(email: string) {
+    await this.page.goto('https://stage-cms.bahah.com.au/app-user/list');
+    await this.page.waitForSelector('table', { timeout: 20000 });
 
-  // Wait for table to load
-  await this.page.waitForSelector('table', { timeout: 20000 });
+    const searchInput = this.page.locator('input[placeholder="Customer"]');
+    await searchInput.waitFor({ state: 'visible', timeout: 20000 });
 
-  // Use placeholder or input type to locate search field
-  const searchInput = this.page.locator('input[placeholder="Customer"]');
-  await searchInput.waitFor({ state: 'visible', timeout: 20000 });
+    await searchInput.fill(email);
+    await this.page.keyboard.press('Enter');
+    await this.page.waitForTimeout(3000);
 
-  // Type email and press Enter
-  await searchInput.fill(email);
-  await this.page.keyboard.press('Enter');
+    const userRow = this.page.locator(`text=${email}`);
+    await expect(userRow).toBeVisible({ timeout: 10000 });
+  }
 
-  // Wait for results to appear
-  await this.page.waitForTimeout(3000);
+  async searchCustomerByFirstName(firstName: string) {
+    await this.page.goto('https://stage-cms.bahah.com.au/app-user/list');
+    await this.page.waitForSelector('table', { timeout: 20000 });
 
-  // Optional: verify the user appears in the table
-  const userRow = this.page.locator(`text=${email}`);
-  await expect(userRow).toBeVisible({ timeout: 10000 });
-}
+    const searchInput = this.page.locator('input[placeholder="Customer"]');
+    await searchInput.waitFor({ state: 'visible', timeout: 20000 });
+
+    await searchInput.fill(firstName);
+    await this.page.keyboard.press('Enter');
+    await this.page.waitForTimeout(3000);
+
+    // Optional: verify at least one row contains the first name
+    const row = this.page.locator(`tr:has-text("${firstName}")`);
+    await expect(row.first()).toBeVisible({ timeout: 10000 });
+  }
+
+  async searchCustomerByLastName(lastName: string) {
+    await this.page.goto('https://stage-cms.bahah.com.au/app-user/list');
+    await this.page.waitForSelector('table', { timeout: 20000 });
+
+    const searchInput = this.page.locator('input[placeholder="Customer"]');
+    await searchInput.waitFor({ state: 'visible', timeout: 20000 });
+
+    await searchInput.fill(lastName);
+    await this.page.keyboard.press('Enter');
+    await this.page.waitForTimeout(3000);
+
+    const row = this.page.locator(`tr:has-text("${lastName}")`);
+    await expect(row.first()).toBeVisible({ timeout: 10000 });
+  }
 
   async logout() {
     await this.page.click("//div[@class='MuiAvatar-root']//*[name()='svg']");

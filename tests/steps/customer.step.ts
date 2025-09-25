@@ -93,6 +93,17 @@ Then('I search for newly added user by email address', async function (this: Cus
   await this.customerPage.searchCustomerByEmail(this.email);
 });
 
+// Search by first name
+Then('I search for newly added user by first name', async function (this: CustomWorld) {
+  await this.customerPage.searchCustomerByFirstName(this.firstName);
+});
+
+// Search by last name
+Then('I search for newly added user by last name', async function (this: CustomWorld) {
+  await this.customerPage.searchCustomerByLastName(this.lastName);
+});
+
+
 Then('I should see  new user added to  customer list', async function (this: CustomWorld) {
   const customerPage = new CustomerPage(this.page);
 
