@@ -19,6 +19,24 @@ export class CustomerPage {
     await this.page.click('text=Add New');
   }
 
+  generateUniqueFirstName(prefix: string = 'Asmita'): string {
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let suffix = '';
+    for (let i = 0; i < 4; i++) {
+      suffix += letters.charAt(Math.floor(Math.random() * letters.length));
+    }
+    return `${prefix}${suffix}`;
+  }
+
+  generateUniqueLastName(prefix: string = 'Aryal'): string {
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let suffix = '';
+    for (let i = 0; i < 4; i++) {
+      suffix += letters.charAt(Math.floor(Math.random() * letters.length));
+    }
+    return `${prefix}${suffix}`;
+  }
+
   async enterFirstName(name: string) {
     await this.page.fill('input[placeholder="Enter first name"]', name);
   }
@@ -67,7 +85,7 @@ export class CustomerPage {
     await expect(row).toBeVisible({ timeout: 10000 });
   }
 
-  // ------------------- NEW SEARCH METHODS -------------------
+  // ------------------- SEARCH METHODS -------------------
   async searchCustomerByEmail(email: string) {
     await this.page.goto('https://stage-cms.bahah.com.au/app-user/list');
     await this.page.waitForSelector('table', { timeout: 20000 });
@@ -94,7 +112,6 @@ export class CustomerPage {
     await this.page.keyboard.press('Enter');
     await this.page.waitForTimeout(3000);
 
-    // Optional: verify at least one row contains the first name
     const row = this.page.locator(`tr:has-text("${firstName}")`);
     await expect(row.first()).toBeVisible({ timeout: 10000 });
   }
