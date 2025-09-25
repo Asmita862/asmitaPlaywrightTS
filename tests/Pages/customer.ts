@@ -131,9 +131,108 @@ export class CustomerPage {
     await expect(row.first()).toBeVisible({ timeout: 10000 });
   }
 
+  // ------------------- STATUS METHODS -------------------
+// ------------------- STATUS METHODS -------------------
+
+// Reload page after last name search
+async reloadAndSearchByEmail(email: string) {
+  await this.page.reload();
+  await this.page.waitForSelector('table', { timeout: 20000 });
+
+  const searchInput = this.page.locator('input[placeholder="Customer"]');
+  await searchInput.waitFor({ state: 'visible', timeout: 20000 });
+
+  await searchInput.fill(email);
+  await this.page.keyboard.press('Enter');
+  await this.page.waitForTimeout(3000);
+
+  const row = this.page.locator(`tr:has-text("${email}")`);
+  await expect(row.first()).toBeVisible({ timeout: 10000 });
+}
+/*
+// Click kebab menu for a row with given email
+async clickKebabMenuByEmail(email: string) {
+  const row = this.page.locator(`tr:has-text("${email}")`);
+  const kebabButton = row.locator('td:nth-child(6) button'); // adjust if index changes
+  await kebabButton.waitFor({ state: 'visible', timeout: 5000 });
+  await kebabButton.click();
+}
+
+// Select an option from the kebab dropdown (Enable / Disable / Edit)
+async selectStatusFromDropdown(option: 'Enable' | 'Disable' | 'Edit') {
+  const optionLocator = this.page.locator(`//li[normalize-space()="${option}"]`);
+  await optionLocator.waitFor({ state: 'visible', timeout: 5000 });
+  await optionLocator.click();
+}
+
+// Get the status text for a customer by email
+async getCustomerStatusByEmail(email: string): Promise<string> {
+  const row = this.page.locator(`tr:has-text("${email}")`);
+  const statusCell = row.locator('td.status'); // confirm column class
+  return (await statusCell.innerText()).trim();
+}
+
+// Verify expected status (Active / Inactive) for a customer by email
+async expectCustomerStatusByEmail(email: string, expectedStatus: 'Active' | 'Inactive') {
+  const status = await this.getCustomerStatusByEmail(email);
+  if (status !== expectedStatus) {
+    throw new Error(`Expected status "${expectedStatus}" but found "${status}"`);
+  }
+}
+
+
+  // ------------------- LOGOUT -------------------
   async logout() {
     await this.page.click("//div[@class='MuiAvatar-root']//*[name()='svg']");
     await this.page.click("//p[normalize-space()='Logout']");
     await expect(this.page).toHaveURL('https://stage-cms.bahah.com.au/login');
   }
 }
+*/
+// Click kebab menu for a row with given email
+async clickKebabMenuByEmail(email: string) {
+  const row = this.page.locator(`tr:has-text("${email}")`);
+  const kebabButton = row.locator('td:nth-child(6) button'); // adjust index if needed
+  await kebabButton.waitFor({ state: 'visible', timeout: 5000 });
+  await kebabButton.click();
+}
+
+// Select an option from the kebab dropdown (Enable / Disable / Edit)
+async selectStatusFromDropdown(option: 'Enable' | 'Disable' | 'Edit') {
+  // Step 1: click the first option in the dropdown (<li>)
+  const dropdownOption = this.page.locator(`li:has-text("${option}")`);
+  await dropdownOption.waitFor({ state: 'visible', timeout: 10000 });
+  await dropdownOption.click();
+
+  // Step 2: If a confirmation popup appears, click the second Disable/Enable button
+  const confirmButton = this.page.locator(`button:has-text("${option}")`);
+  if (await confirmButton.isVisible({ timeout: 5000 })) {
+    await confirmButton.click();
+  }
+
+  // Small wait for the table to reflect updated status
+  await this.page.waitForTimeout(2000);
+}
+
+// Get the status text for a customer by email
+async getCustomerStatusByEmail(email: string): Promise<string> {
+  const row = this.page.locator(`tr:has-text("${email}")`);
+  const statusCell = row.locator('td:nth-child(5)'); // adjust index if needed
+  return (await statusCell.innerText()).trim();
+}
+
+// Verify expected status (Active / Inactive) for a customer by email
+async expectCustomerStatusByEmail(email: string, expectedStatus: 'Active' | 'Inactive') {
+  const status = await this.getCustomerStatusByEmail(email);
+  if (status !== expectedStatus) {
+    throw new Error(`Expected status "${expectedStatus}" but found "${status}"`);
+  }
+}
+
+// ------------------- LOGOUT -------------------
+async logout() {
+  await this.page.click("//div[@class='MuiAvatar-root']//*[name()='svg']");
+  await this.page.click("//p[normalize-space()='Logout']");
+  await expect(this.page).toHaveURL('https://stage-cms.bahah.com.au/login');
+}
+};

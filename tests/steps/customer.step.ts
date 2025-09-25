@@ -47,9 +47,7 @@ When('I upload profile picture', async function (this: CustomWorld) {
 
 // ------------------- Actions -------------------
 When('I click "create new user" button', async function (this: CustomWorld) {
-  const customerPage = new CustomerPage(this.page);
-
-  const button = customerPage.createUserButton;
+  const button = this.customerPage.createUserButton;
   await button.waitFor({ state: 'visible', timeout: 30000 });
 
   if (!(await button.isEnabled())) {
@@ -81,6 +79,9 @@ Then('I search for newly added user by first name', async function (this: Custom
 
 Then('I search for newly added user by last name', async function (this: CustomWorld) {
   await this.customerPage.searchCustomerByLastName(this.lastName);
+
+  // Reload page and search by email to ensure only correct row is targeted for status change
+  await this.customerPage.reloadAndSearchByEmail(this.email);
 });
 
 Then('I should see new user added to customer list', async function (this: CustomWorld) {
@@ -88,10 +89,7 @@ Then('I should see new user added to customer list', async function (this: Custo
     throw new Error('New customer email not found in World context');
   }
   
-  // Verify by email first (most reliable)
   await this.customerPage.searchCustomerByEmail(this.email);
-
-  // Optional: Also verify by first and last name
   if (this.firstName) {
     await this.customerPage.searchCustomerByFirstName(this.firstName);
   }
@@ -100,6 +98,48 @@ Then('I should see new user added to customer list', async function (this: Custo
   }
 });
 
+// ------------------- STATUS CHANGE STEPS -------------------
+// ------------------- STATUS CHANGE STEPS -------------------
+When(
+  'I change the status of the customer to {string}',
+  async function (this: CustomWorld, status: string) {
+    // Ensure table shows only this customer
+    await this.customerPage.reloadAndSearchByEmail(this.email);
+
+    // Click kebab menu and select status
+    await this.customerPage.clickKebabMenuByEmail(this.email);
+    await this.customerPage.selectStatusFromDropdown(status as 'Enable' | 'Disable');
+
+    // Map dropdown option to expected table status
+    const statusMap: Record<string, string> = {
+      Enable: 'Active',
+      Disable: 'Inactive'
+    };
+
+    // Wait until the table updates the status cell
+    const row = this.customerPage.page.locator(`tr:has-text("${this.email}")`);
+    const statusCell = row.locator('td:nth-child(5)'); // adjust index to match status column
+    await expect(statusCell).toHaveText(statusMap[status], { timeout: 30000 });
+  }
+);
+
+Then(
+  'the customer status should be {string}',
+  async function (this: CustomWorld, expectedStatus: string) {
+    // Map dropdown option to table status
+    const statusMap: Record<string, string> = {
+      Enable: 'Active',
+      Disable: 'Inactive'
+    };
+
+    const row = this.customerPage.page.locator(`tr:has-text("${this.email}")`);
+    const statusCell = row.locator('td:nth-child(5)'); // same index as above
+    await expect(statusCell).toHaveText(statusMap[expectedStatus], { timeout: 30000 });
+  }
+);
+
+// ------------------- LOGOUT -------------------
 Then('I logout from application', async function (this: CustomWorld) {
   await logout(this.page);
 });
+
