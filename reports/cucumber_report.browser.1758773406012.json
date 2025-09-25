@@ -1,0 +1,214 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "customer-management;add-a-new-customer-and-verify-in-list",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Add a new customer and verify in list",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3322475507
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am already logged in and on dashboard page",
+            "match": {
+              "location": "tests/steps/customer.step.ts:9"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 60004933336,
+              "error_message": "Error: function timed out, ensure the promise resolves within 60000 milliseconds\n    at Timeout.<anonymous> (/home/ebpearls/Desktop/Bahah-2/node_modules/@cucumber/cucumber/src/time.ts:52:14)\n    at listOnTimeout (node:internal/timers:581:17)\n    at processTimers (node:internal/timers:519:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I click on \"Customer\" section",
+            "match": {
+              "location": "tests/steps/customer.step.ts:15"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on \"Add New\" button",
+            "match": {
+              "location": "tests/steps/customer.step.ts:19"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I enter customer's first name",
+            "match": {
+              "location": "tests/steps/customer.step.ts:23"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I enter customer's last name",
+            "match": {
+              "location": "tests/steps/customer.step.ts:28"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I enter customer's email address",
+            "match": {
+              "location": "tests/steps/customer.step.ts:33"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I enter customer's contact number",
+            "match": {
+              "location": "tests/steps/customer.step.ts:38"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I upload profile picture",
+            "match": {
+              "location": "tests/steps/customer.step.ts:43"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click \"create new user\" button",
+            "match": {
+              "location": "tests/steps/customer.step.ts:48"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I should see a success message user was created",
+            "match": {
+              "location": "tests/steps/customer.step.ts:54"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I should be able to search the newly added customer by email",
+            "match": {
+              "location": "tests/steps/customer.step.ts:58"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "I logout from application",
+            "match": {
+              "location": "tests/steps/customer.step.ts:62"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 3232932717,
+              "error_message": "Error: Object with guid response@1a231511435fb38297b8a57b90034dbf was not bound in the connection\n    at Connection._tChannelImplFromWire (/home/ebpearls/Desktop/Bahah-2/node_modules/playwright-core/lib/client/connection.js:190:15)\n    at /home/ebpearls/Desktop/Bahah-2/node_modules/playwright-core/lib/protocol/validatorPrimitives.js:162:20\n    at /home/ebpearls/Desktop/Bahah-2/node_modules/playwright-core/lib/protocol/validatorPrimitives.js:122:12\n    at /home/ebpearls/Desktop/Bahah-2/node_modules/playwright-core/lib/protocol/validatorPrimitives.js:140:21\n    at Connection.dispatch (/home/ebpearls/Desktop/Bahah-2/node_modules/playwright-core/lib/client/connection.js:150:26)\n    at Immediate.<anonymous> (/home/ebpearls/Desktop/Bahah-2/node_modules/playwright-core/lib/inProcessFactory.js:48:85)\n    at processImmediate (node:internal/timers:483:21)\n    at process.topLevelDomainCallback (node:domain:161:15)\n    at process.callbackTrampoline (node:internal/async_hooks:128:24)"
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXQQEAMAgAIR/2r+x67KAFe3cDAAAAv9sBAACAAAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQYAgAIBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgAQBBgAAdsBD6AAAAEZJREFUIEGAAQAASBBgAAAAEgQYAACABAEGAAAgQYABAABIEGAAAAASBBgAAIAEAQYAACBBgAEAAEgQYAAAABIEGAAAgIQHAAD//93CXf0AAAAGSURBVAMAkKsOPoHtCG4AAAAASUVORK5CYII=",
+                "mime_type": "image/png"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@customer",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "customer-management",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Customer management",
+    "tags": [
+      {
+        "name": "@customer",
+        "line": 1
+      }
+    ],
+    "uri": "tests/features/customer.feature"
+  }
+]

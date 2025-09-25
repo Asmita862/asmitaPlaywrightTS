@@ -67,6 +67,30 @@ export class CustomerPage {
     await expect(row).toBeVisible({ timeout: 10000 });
   }
 
+   // ------------------- NEW SEARCH METHOD -------------------
+async searchCustomerByEmail(email: string) {
+  // Go to customer list page
+  await this.page.goto('https://stage-cms.bahah.com.au/app-user/list');
+
+  // Wait for table to load
+  await this.page.waitForSelector('table', { timeout: 20000 });
+
+  // Use placeholder or input type to locate search field
+  const searchInput = this.page.locator('input[placeholder="Customer"]');
+  await searchInput.waitFor({ state: 'visible', timeout: 20000 });
+
+  // Type email and press Enter
+  await searchInput.fill(email);
+  await this.page.keyboard.press('Enter');
+
+  // Wait for results to appear
+  await this.page.waitForTimeout(3000);
+
+  // Optional: verify the user appears in the table
+  const userRow = this.page.locator(`text=${email}`);
+  await expect(userRow).toBeVisible({ timeout: 10000 });
+}
+
   async logout() {
     await this.page.click("//div[@class='MuiAvatar-root']//*[name()='svg']");
     await this.page.click("//p[normalize-space()='Logout']");
