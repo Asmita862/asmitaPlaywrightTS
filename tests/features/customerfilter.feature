@@ -8,3 +8,4 @@ Feature: Customer Filter
     And I select the Active status radio button
     And I apply the customer filter
     Then I should see only active customers in the list
+   Then I logout from the customer filter scenario

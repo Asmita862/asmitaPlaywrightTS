@@ -99,7 +99,6 @@ Then('I should see new user added to customer list', async function (this: Custo
 });
 
 // ------------------- STATUS CHANGE STEPS -------------------
-// ------------------- STATUS CHANGE STEPS -------------------
 When(
   'I change the status of the customer to {string}',
   async function (this: CustomWorld, status: string) {

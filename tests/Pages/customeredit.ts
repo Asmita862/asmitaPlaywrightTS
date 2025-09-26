@@ -1,4 +1,5 @@
 import { Page, expect, Locator } from '@playwright/test';
+import { login, logout } from '../support/auth';
 
 export class CustomerEditPage {
   page: Page;
@@ -104,14 +105,6 @@ export class CustomerEditPage {
     await this.confirmUpdate(confirmButtonText);
     await this.verifySuccessToast(toastMessage);
   }
-
-  // Logout method
-  async logout() {
-    await this.page.click("//div[@class='MuiAvatar-root']//*[name()='svg']");
-    await this.page.click("//p[normalize-space()='Logout']");
-    await expect(this.page).toHaveURL('https://stage-cms.bahah.com.au/login');
-  }
 }
-
 
 

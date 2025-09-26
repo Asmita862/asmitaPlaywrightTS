@@ -1,4 +1,5 @@
 import { Page, Locator, expect } from '@playwright/test';
+import { login, logout } from '../support/auth';
 
 export class CustomerFilterPage {
   private page: Page;

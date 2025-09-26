@@ -1,0 +1,290 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "customer-management;add-a-new-customer-and-verify-status",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Add a new customer and verify status",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 6577260853
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am already logged in and on dashboard page",
+            "match": {
+              "location": "tests/steps/customer.step.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7101038069
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I click on \"Customer\" section",
+            "match": {
+              "location": "tests/steps/customer.step.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 274126469
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on \"Add New\" button",
+            "match": {
+              "location": "tests/steps/customer.step.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 627230383
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I enter customer's first name",
+            "match": {
+              "location": "tests/steps/customer.step.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1041070114
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I enter customer's last name",
+            "match": {
+              "location": "tests/steps/customer.step.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 263775591
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I enter customer's email address",
+            "match": {
+              "location": "tests/steps/customer.step.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 264264788
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I enter customer's contact number",
+            "match": {
+              "location": "tests/steps/customer.step.ts:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 303776420
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I upload profile picture",
+            "match": {
+              "location": "tests/steps/customer.step.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 239853359
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click \"create new user\" button",
+            "match": {
+              "location": "tests/steps/customer.step.ts:49"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6700706114
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I should see a success message  user was created",
+            "match": {
+              "location": "tests/steps/customer.step.ts:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 244981906
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I search for newly added user by email address",
+            "match": {
+              "location": "tests/steps/customer.step.ts:72"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4883829899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I search for newly added user by first name",
+            "match": {
+              "location": "tests/steps/customer.step.ts:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4097815975
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I search for newly added user by last name",
+            "match": {
+              "location": "tests/steps/customer.step.ts:80"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8228046198
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I change the status of the customer to \"Disable\"",
+            "match": {
+              "location": "tests/steps/customer.step.ts:103"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6895354542
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the customer status should be \"Disable\"",
+            "match": {
+              "location": "tests/steps/customer.step.ts:126"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5130906
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "I change the status of the customer to \"Enable\"",
+            "match": {
+              "location": "tests/steps/customer.step.ts:103"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6886453309
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "the customer status should be \"Enable\"",
+            "match": {
+              "location": "tests/steps/customer.step.ts:126"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4134914
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "I logout from application",
+            "match": {
+              "location": "tests/steps/customer.step.ts:142"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 577549896
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 209086394
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABPEAAALSCAIAAAAz19NtAAAQAElEQVR4nOzXQQ0AAAgAIR/2r6w5boMW7N0NAAAABO0AAABAk9MCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAA7+UD8wAAAFFJREFUVU4LAABAldMCAABQ5bQAAABUOS0AAABVTgsAAECV0wIAAFDltAAAAFQ5LQAAAFVOCwAAQJXTAgAAUOW0AAAAVDktAAAAVU4LAABA1QMAAP//sqa7PgAAAAZJREFUAwDgGA5GcxQRtQAAAABJRU5ErkJggg==",
+                "mime_type": "image/png"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@customer",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "customer-management",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Customer management",
+    "tags": [
+      {
+        "name": "@customer",
+        "line": 1
+      }
+    ],
+    "uri": "tests/features/customer.feature"
+  }
+]

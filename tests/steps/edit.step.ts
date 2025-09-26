@@ -80,3 +80,4 @@ Then('I should see a success toast message {string}', async function (this: Cust
 Then('I logout from the application', async function (this: CustomWorld) {
   await logout(this.page);
 });
+
